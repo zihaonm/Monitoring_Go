@@ -1,0 +1,22 @@
+{
+  "services": {
+    "example-id-123": {
+      "id": "example-id-123",
+      "name": "My Website",
+      "url": "https://example.com",
+      "check_interval": 60,
+      "timeout": 10,
+      "status": "up",
+      "last_check": "2025-10-22T10:30:00Z",
+      "last_uptime": "2025-10-22T10:30:00Z",
+      "last_downtime": "0001-01-01T00:00:00Z",
+      "response_time": 245,
+      "created_at": "2025-10-22T09:00:00Z"
+    }
+  },
+  "telegram_config": {
+    "bot_token": "123456789:ABCdefGHIjklMNOpqrsTUVwxyz",
+    "chat_id": "-1001234567890",
+    "enabled": true
+  }
+}

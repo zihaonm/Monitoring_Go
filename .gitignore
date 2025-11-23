@@ -1,0 +1,49 @@
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binary, built with `go test -c`
+*.test
+
+# Output of the go coverage tool
+*.out
+
+# Dependency directories
+vendor/
+
+# Go workspace file
+go.work
+
+# Build output - Dashboard
+monitoring
+monitoring-dashboard-*
+monitoring-linux-*
+monitoring-darwin-*
+monitoring-windows-*
+
+# Build output - Agent
+monitoring-agent
+monitoring-agent-*
+monitoring-android
+
+# Build directories
+dist/
+agent/dist/
+
+# Data files
+monitoring_data.json
+*.json.bak
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
