@@ -14,38 +14,57 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: #f5f7fa;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
             padding: 20px;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
         header {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
             margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         h1 {
-            color: #2c3e50;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 42px;
+            font-weight: 700;
             margin-bottom: 10px;
+            letter-spacing: -1px;
         }
 
         .subtitle {
-            color: #7f8c8d;
+            color: #6b7280;
+            font-size: 16px;
+            font-weight: 500;
         }
 
         .controls {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
             margin-bottom: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .controls h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1f2937;
         }
 
         .add-service-form {
@@ -64,86 +83,126 @@
         }
 
         select {
-            padding: 10px;
-            border: 2px solid #e0e0e0;
-            border-radius: 5px;
+            padding: 12px 16px;
+            border: 2px solid #e5e7eb;
+            border-radius: 10px;
             font-size: 14px;
             background: white;
+            transition: all 0.3s ease;
+            font-weight: 500;
         }
 
         select:focus {
             outline: none;
-            border-color: #3498db;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
         }
 
-        input {
-            padding: 10px;
-            border: 2px solid #e0e0e0;
-            border-radius: 5px;
+        input[type="text"],
+        input[type="number"] {
+            padding: 12px 16px;
+            border: 2px solid #e5e7eb;
+            border-radius: 10px;
             font-size: 14px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            width: 100%;
         }
 
-        input:focus {
+        input[type="text"]:focus,
+        input[type="number"]:focus {
             outline: none;
-            border-color: #3498db;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
         }
 
         button {
-            padding: 10px 20px;
-            background: #3498db;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             border: none;
-            border-radius: 5px;
+            border-radius: 10px;
             cursor: pointer;
             font-size: 14px;
             font-weight: 600;
-            transition: background 0.3s;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
         }
 
         button:hover {
-            background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        button:active {
+            transform: translateY(0);
         }
 
         button.danger {
-            background: #e74c3c;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            box-shadow: 0 4px 12px rgba(245, 87, 108, 0.3);
         }
 
         button.danger:hover {
-            background: #c0392b;
+            box-shadow: 0 6px 20px rgba(245, 87, 108, 0.4);
         }
 
         button.secondary {
-            background: #95a5a6;
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            color: #374151;
+            box-shadow: 0 4px 12px rgba(168, 237, 234, 0.3);
         }
 
         button.secondary:hover {
-            background: #7f8c8d;
+            box-shadow: 0 6px 20px rgba(168, 237, 234, 0.4);
         }
 
         .services-grid {
             display: grid;
-            gap: 20px;
+            gap: 24px;
+            grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+        }
+
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         .service-card {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            border-left: 5px solid #95a5a6;
-            transition: transform 0.2s;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 28px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: #9ca3af;
+            transition: all 0.3s ease;
         }
 
         .service-card:hover {
-            transform: translateY(-2px);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 48px rgba(0,0,0,0.12);
         }
 
-        .service-card.up {
-            border-left-color: #2ecc71;
+        .service-card.up::before {
+            background: linear-gradient(180deg, #10b981 0%, #059669 100%);
         }
 
-        .service-card.down {
-            border-left-color: #e74c3c;
+        .service-card.down::before {
+            background: linear-gradient(180deg, #ef4444 0%, #dc2626 100%);
         }
 
         .service-header {
@@ -154,38 +213,43 @@
         }
 
         .service-name {
-            font-size: 20px;
-            font-weight: 600;
-            color: #2c3e50;
+            font-size: 22px;
+            font-weight: 700;
+            color: #1f2937;
+            letter-spacing: -0.5px;
         }
 
         .status-badge {
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
+            padding: 8px 18px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 700;
             text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
         .status-badge.up {
-            background: #d5f4e6;
-            color: #27ae60;
+            background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+            color: #065f46;
         }
 
         .status-badge.down {
-            background: #fadbd8;
-            color: #c0392b;
+            background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+            color: #991b1b;
         }
 
         .status-badge.unknown {
-            background: #e8e8e8;
-            color: #7f8c8d;
+            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+            color: #4b5563;
         }
 
         .service-url {
-            color: #3498db;
-            margin-bottom: 10px;
+            color: #667eea;
+            margin-bottom: 15px;
             word-break: break-all;
+            font-size: 14px;
+            font-weight: 500;
         }
 
         .service-details {
@@ -212,39 +276,46 @@
 
         .empty-state {
             text-align: center;
-            padding: 60px 20px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 80px 20px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         .empty-state h2 {
-            color: #95a5a6;
-            margin-bottom: 10px;
+            color: #6b7280;
+            margin-bottom: 12px;
+            font-size: 24px;
+            font-weight: 600;
         }
 
         .empty-state p {
-            color: #bdc3c7;
+            color: #9ca3af;
+            font-size: 16px;
         }
 
         .label {
             display: block;
             font-size: 12px;
-            font-weight: 600;
-            color: #7f8c8d;
-            margin-bottom: 5px;
+            font-weight: 700;
+            color: #4b5563;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .details-toggle {
-            background: #ecf0f1;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 5px;
+            background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+            border: 2px solid #e5e7eb;
+            padding: 12px 20px;
+            border-radius: 12px;
             cursor: pointer;
-            font-size: 12px;
+            font-size: 13px;
             font-weight: 600;
-            color: #2c3e50;
-            transition: background 0.3s;
+            color: #374151;
+            transition: all 0.3s ease;
             width: 100%;
             text-align: left;
             display: flex;
@@ -253,26 +324,18 @@
         }
 
         .details-toggle:hover {
-            background: #d5dbdb;
+            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+            border-color: #667eea;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
         }
 
         .details-toggle .arrow {
-            transition: transform 0.3s;
+            transition: transform 0.3s ease;
+            font-size: 14px;
         }
 
         .details-toggle.expanded .arrow {
             transform: rotate(180deg);
-        }
-
-        .service-details-panel {
-            display: none;
-            margin-top: 15px;
-            padding-top: 15px;
-            border-top: 2px solid #ecf0f1;
-        }
-
-        .service-details-panel.visible {
-            display: block;
         }
 
         .stats-grid {
@@ -283,21 +346,27 @@
         }
 
         .stat-card {
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: 5px;
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border: 1px solid rgba(0,0,0,0.05);
         }
 
         .stat-label {
             font-size: 12px;
-            color: #7f8c8d;
-            margin-bottom: 5px;
+            color: #6b7280;
+            margin-bottom: 8px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .stat-value {
-            font-size: 24px;
-            font-weight: 600;
-            color: #2c3e50;
+            font-size: 28px;
+            font-weight: 700;
+            color: #1f2937;
+            letter-spacing: -1px;
         }
 
         .chart-container {
@@ -321,7 +390,8 @@
             top: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(8px);
             animation: fadeIn 0.3s;
         }
 
@@ -337,14 +407,16 @@
         }
 
         .modal-content {
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 35px;
+            border-radius: 20px;
             max-width: 600px;
             width: 90%;
             max-height: 90vh;
             overflow-y: auto;
-            box-shadow: 0 5px 30px rgba(0,0,0,0.3);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255, 255, 255, 0.3);
             animation: slideIn 0.3s;
         }
 
@@ -363,14 +435,19 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 2px solid #ecf0f1;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #e5e7eb;
         }
 
         .modal-header h2 {
-            color: #2c3e50;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin: 0;
+            font-size: 28px;
+            font-weight: 700;
         }
 
         .modal-close {
@@ -425,76 +502,171 @@
             flex: 1;
         }
 
-        .add-service-button {
-            background: #27ae60;
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            border-radius: 5px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.3s;
+        /* Top Right Action Buttons */
+        .top-right-buttons {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            display: flex;
+            gap: 15px;
+            z-index: 1000;
         }
 
-        .add-service-button:hover {
-            background: #229954;
+        .action-btn {
+            width: 56px;
+            height: 56px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+        }
+
+        .action-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 28px rgba(0, 0, 0, 0.3);
+        }
+
+        .action-btn:active {
+            transform: translateY(0);
+        }
+
+        .telegram-btn {
+            background: linear-gradient(135deg, #0088cc 0%, #0077b5 100%);
+            padding: 0;
+        }
+
+        .add-service-btn {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            font-size: 32px;
+            font-weight: 300;
+        }
+
+        .telegram-popup {
+            position: fixed;
+            top: 100px;
+            right: 30px;
+            width: 400px;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 25px;
+            display: none;
+            z-index: 999;
+            animation: slideInRight 0.3s ease;
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .telegram-popup.show {
+            display: block;
+        }
+
+        .telegram-popup h3 {
+            margin-bottom: 20px;
+            color: #1f2937;
+            font-size: 20px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .telegram-popup .form-row {
+            margin-bottom: 15px;
+        }
+
+        .telegram-popup .button-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .telegram-popup .button-row button {
+            flex: 1;
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <!-- Top Right Action Buttons -->
+        <div class="top-right-buttons">
+            <button class="action-btn add-service-btn" onclick="openServiceModal('add')" title="Add New Service">+</button>
+            <button class="action-btn telegram-btn" onclick="toggleTelegramPopup(event)" title="Telegram Settings">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+                    <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121L7.94 13.956l-2.962-.924c-.643-.204-.657-.643.136-.953l11.566-4.458c.538-.196 1.006.128.832.795z"/>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Telegram Settings Popup -->
+        <div id="telegramPopup" class="telegram-popup">
+            <h3>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="#0088cc" style="vertical-align: middle;">
+                    <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121L7.94 13.956l-2.962-.924c-.643-.204-.657-.643.136-.953l11.566-4.458c.538-.196 1.006.128.832.795z"/>
+                </svg>
+                Telegram Notifications
+            </h3>
+            <div class="form-row">
+                <label class="label">Bot Token</label>
+                <input type="text" id="botToken" placeholder="123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11">
+            </div>
+            <div class="form-row">
+                <label class="label">Chat ID</label>
+                <input type="text" id="chatId" placeholder="-1001234567890">
+            </div>
+            <div class="form-row">
+                <label class="label" style="display: flex; align-items: center; gap: 5px;">
+                    <input type="checkbox" id="enableTelegram" style="width: auto; margin: 0;">
+                    <span>Enable Notifications</span>
+                </label>
+            </div>
+            <div class="button-row">
+                <button onclick="saveTelegramConfig()" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);">Save</button>
+                <button onclick="testTelegram()" class="secondary">Test</button>
+            </div>
+        </div>
+
         <header>
             <h1>Service Monitoring Dashboard</h1>
             <p class="subtitle">Monitor your services and websites in real-time</p>
         </header>
 
         <div class="controls" style="margin-bottom: 20px;">
-            <h3 style="margin-bottom: 15px; color: #2c3e50;">System Information</h3>
-            <div id="systemInfo" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
-                <div style="background: #f8f9fa; padding: 15px; border-radius: 5px;">
-                    <div style="font-size: 12px; color: #7f8c8d; margin-bottom: 5px;">CPU Usage</div>
-                    <div style="font-size: 24px; font-weight: 600; color: #2c3e50;" id="cpuUsage">--</div>
+            <h3 style="margin-bottom: 20px; color: #1f2937; font-size: 20px; font-weight: 600;">📊 System Information</h3>
+            <div id="systemInfo" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 18px;">
+                <div style="background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%); padding: 20px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.05);">
+                    <div style="font-size: 12px; color: #6b7280; margin-bottom: 8px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">💻 CPU Usage</div>
+                    <div style="font-size: 28px; font-weight: 700; color: #1f2937; letter-spacing: -1px;" id="cpuUsage">--</div>
                 </div>
-                <div style="background: #f8f9fa; padding: 15px; border-radius: 5px;">
-                    <div style="font-size: 12px; color: #7f8c8d; margin-bottom: 5px;">Memory Usage</div>
-                    <div style="font-size: 24px; font-weight: 600; color: #2c3e50;" id="memoryUsage">--</div>
+                <div style="background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%); padding: 20px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.05);">
+                    <div style="font-size: 12px; color: #6b7280; margin-bottom: 8px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">🧠 Memory Usage</div>
+                    <div style="font-size: 28px; font-weight: 700; color: #1f2937; letter-spacing: -1px;" id="memoryUsage">--</div>
                 </div>
-                <div style="background: #f8f9fa; padding: 15px; border-radius: 5px;">
-                    <div style="font-size: 12px; color: #7f8c8d; margin-bottom: 5px;">Disk Usage</div>
-                    <div style="font-size: 24px; font-weight: 600; color: #2c3e50;" id="diskUsage">--</div>
+                <div style="background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%); padding: 20px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.05);">
+                    <div style="font-size: 12px; color: #6b7280; margin-bottom: 8px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">💾 Disk Usage</div>
+                    <div style="font-size: 28px; font-weight: 700; color: #1f2937; letter-spacing: -1px;" id="diskUsage">--</div>
                 </div>
-                <div style="background: #f8f9fa; padding: 15px; border-radius: 5px;">
-                    <div style="font-size: 12px; color: #7f8c8d; margin-bottom: 5px;">Uptime</div>
-                    <div style="font-size: 24px; font-weight: 600; color: #2c3e50;" id="uptime">--</div>
+                <div style="background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%); padding: 20px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.05);">
+                    <div style="font-size: 12px; color: #6b7280; margin-bottom: 8px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">⏱️ Uptime</div>
+                    <div style="font-size: 28px; font-weight: 700; color: #1f2937; letter-spacing: -1px;" id="uptime">--</div>
                 </div>
             </div>
-        </div>
-
-        <div class="controls" style="margin-bottom: 20px;">
-            <h3 style="margin-bottom: 15px; color: #2c3e50;">Telegram Notifications</h3>
-            <div style="display: grid; grid-template-columns: 1fr 1fr auto auto; gap: 10px; align-items: end;">
-                <div>
-                    <label class="label">Bot Token</label>
-                    <input type="text" id="botToken" placeholder="123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11">
-                </div>
-                <div>
-                    <label class="label">Chat ID</label>
-                    <input type="text" id="chatId" placeholder="-1001234567890">
-                </div>
-                <div>
-                    <label class="label" style="display: flex; align-items: center; gap: 5px;">
-                        <input type="checkbox" id="enableTelegram" style="width: auto; margin: 0;">
-                        <span>Enable</span>
-                    </label>
-                </div>
-                <button onclick="saveTelegramConfig()" style="background: #27ae60;">Save Config</button>
-                <button onclick="testTelegram()" class="secondary">Test</button>
-            </div>
-        </div>
-
-        <div class="controls">
-            <button class="add-service-button" onclick="openServiceModal('add')">➕ Add New Service</button>
         </div>
 
         <div id="servicesContainer" class="services-grid"></div>
@@ -560,6 +732,19 @@
                 <div class="modal-actions">
                     <button class="secondary" onclick="closeServiceModal()">Cancel</button>
                     <button id="saveServiceBtn" onclick="saveService()">Save</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service Details Modal -->
+        <div id="serviceDetailsModal" class="modal">
+            <div class="modal-content" style="max-width: 900px;">
+                <div class="modal-header">
+                    <h2 id="detailsModalTitle">Service Details</h2>
+                    <button class="modal-close" onclick="closeDetailsModal()">&times;</button>
+                </div>
+                <div id="detailsModalContent">
+                    <div class="loading">Loading details...</div>
                 </div>
             </div>
         </div>
@@ -656,11 +841,31 @@
             openServiceModal('clone', serviceId);
         }
 
+        // Telegram popup toggle
+        function toggleTelegramPopup(event) {
+            if (event) {
+                event.stopPropagation();
+            }
+            const popup = document.getElementById('telegramPopup');
+            popup.classList.toggle('show');
+        }
+
         // Close modal when clicking outside
         window.onclick = function(event) {
-            const modal = document.getElementById('serviceModal');
-            if (event.target === modal) {
+            const serviceModal = document.getElementById('serviceModal');
+            const detailsModal = document.getElementById('serviceDetailsModal');
+            const telegramPopup = document.getElementById('telegramPopup');
+            const telegramBtn = document.querySelector('.telegram-btn');
+
+            if (event.target === serviceModal) {
                 closeServiceModal();
+            }
+            if (event.target === detailsModal) {
+                closeDetailsModal();
+            }
+            // Close telegram popup if clicking outside
+            if (!telegramPopup.contains(event.target) && !telegramBtn.contains(event.target)) {
+                telegramPopup.classList.remove('show');
             }
         }
 
@@ -686,9 +891,6 @@
                 `;
                 return;
             }
-
-            // Save currently expanded services before re-rendering
-            const currentlyExpanded = Array.from(expandedServices);
 
             container.innerHTML = services.map(service => {
                 // Determine check type (default to http for backward compatibility)
@@ -773,39 +975,15 @@
                         ${telegramInfo}
                     </div>
                     <div class="service-actions">
-                        <button onclick="editService('${service.id}')">Edit</button>
-                        <button class="secondary" onclick="cloneService('${service.id}')">Clone</button>
-                        <button class="secondary" onclick="checkServiceNow('${service.id}')">Check Now</button>
-                        <button class="danger" onclick="deleteService('${service.id}')">Delete</button>
-                    </div>
-                    <div style="margin-top: 15px;">
-                        <button class="details-toggle" onclick="toggleDetails('${service.id}')">
-                            <span>View Details & Statistics</span>
-                            <span class="arrow">▼</span>
-                        </button>
-                        <div id="details-${service.id}" class="service-details-panel">
-                            <div class="loading">Loading...</div>
-                        </div>
+                        <button onclick='openDetailsModal("${service.id}", "${service.name}")'>📊 View Details</button>
+                        <button onclick='editService("${service.id}")'>Edit</button>
+                        <button class='secondary' onclick='cloneService("${service.id}")'>Clone</button>
+                        <button class='secondary' onclick='checkServiceNow("${service.id}")'>Check Now</button>
+                        <button class='danger' onclick='deleteService("${service.id}")'>Delete</button>
                     </div>
                 </div>
                 `;
             }).join('');
-
-            // Restore expanded state after re-rendering
-            currentlyExpanded.forEach(serviceId => {
-                const panel = document.getElementById(`details-${serviceId}`);
-                const button = document.querySelector(`button[onclick="toggleDetails('${serviceId}')"]`);
-
-                if (panel && button) {
-                    panel.classList.add('visible');
-                    button.classList.add('expanded');
-                    // Don't add back to expandedServices set yet, as loadServiceDetails will do that
-                    expandedServices.add(serviceId);
-
-                    // Reload the details for this service
-                    loadServiceDetails(serviceId);
-                }
-            });
         }
 
         function toggleCheckTypeFields() {
@@ -980,6 +1158,8 @@
                 if (response.ok) {
                     alert('Telegram configuration saved successfully!');
                     loadTelegramConfig();
+                    // Close the popup after successful save
+                    document.getElementById('telegramPopup').classList.remove('show');
                 } else {
                     alert('Error saving Telegram configuration');
                 }
@@ -1067,32 +1247,39 @@
             }
         }
 
-        // Service details and charts
-        const expandedServices = new Set();
+        // Service details modal and charts
         const serviceCharts = {};
+        let currentDetailsServiceId = null;
 
-        async function toggleDetails(serviceId) {
-            const panel = document.getElementById(`details-${serviceId}`);
-            const button = event.target.closest('.details-toggle');
+        async function openDetailsModal(serviceId, serviceName) {
+            currentDetailsServiceId = serviceId;
+            const modal = document.getElementById('serviceDetailsModal');
+            const modalTitle = document.getElementById('detailsModalTitle');
+            const modalContent = document.getElementById('detailsModalContent');
 
-            if (expandedServices.has(serviceId)) {
-                // Collapse
-                panel.classList.remove('visible');
-                button.classList.remove('expanded');
-                expandedServices.delete(serviceId);
-            } else {
-                // Expand
-                panel.classList.add('visible');
-                button.classList.add('expanded');
-                expandedServices.add(serviceId);
+            modalTitle.textContent = `${serviceName} - Details & Statistics`;
+            modalContent.innerHTML = '<div class="loading">Loading details...</div>';
 
-                // Load details if not already loaded
-                await loadServiceDetails(serviceId);
+            modal.classList.add('show');
+
+            await loadServiceDetails(serviceId);
+        }
+
+        function closeDetailsModal() {
+            const modal = document.getElementById('serviceDetailsModal');
+            modal.classList.remove('show');
+
+            // Destroy chart if it exists
+            if (currentDetailsServiceId && serviceCharts[currentDetailsServiceId]) {
+                serviceCharts[currentDetailsServiceId].destroy();
+                delete serviceCharts[currentDetailsServiceId];
             }
+
+            currentDetailsServiceId = null;
         }
 
         async function loadServiceDetails(serviceId) {
-            const panel = document.getElementById(`details-${serviceId}`);
+            const modalContent = document.getElementById('detailsModalContent');
 
             try {
                 // Fetch statistics and history in parallel
@@ -1108,12 +1295,12 @@
                 renderServiceDetails(serviceId, stats, history);
             } catch (error) {
                 console.error('Error loading service details:', error);
-                panel.innerHTML = '<div class="loading" style="color: #e74c3c;">Failed to load details</div>';
+                modalContent.innerHTML = '<div class="loading" style="color: #e74c3c;">Failed to load details</div>';
             }
         }
 
         function renderServiceDetails(serviceId, stats, history) {
-            const panel = document.getElementById(`details-${serviceId}`);
+            const modalContent = document.getElementById('detailsModalContent');
 
             // Format uptime/downtime duration
             function formatDuration(seconds) {
@@ -1126,11 +1313,11 @@
                 return `${minutes}m`;
             }
 
-            panel.innerHTML = `
+            modalContent.innerHTML = `
                 <div class="stats-grid">
                     <div class="stat-card">
                         <div class="stat-label">Uptime Percentage</div>
-                        <div class="stat-value" style="color: ${stats.uptime_percentage >= 95 ? '#27ae60' : (stats.uptime_percentage >= 80 ? '#f39c12' : '#e74c3c')}">${stats.uptime_percentage.toFixed(2)}%</div>
+                        <div class="stat-value" style="color: ${stats.uptime_percentage >= 95 ? '#10b981' : (stats.uptime_percentage >= 80 ? '#f59e0b' : '#ef4444')}">${stats.uptime_percentage.toFixed(2)}%</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-label">Avg Response Time</div>
@@ -1143,25 +1330,25 @@
                     <div class="stat-card">
                         <div class="stat-label">Up / Down Count</div>
                         <div class="stat-value" style="font-size: 18px;">
-                            <span style="color: #27ae60;">${stats.up_count}</span> /
-                            <span style="color: #e74c3c;">${stats.down_count}</span>
+                            <span style="color: #10b981;">${stats.up_count}</span> /
+                            <span style="color: #ef4444;">${stats.down_count}</span>
                         </div>
                     </div>
                     ${stats.current_uptime > 0 ? `
                     <div class="stat-card">
                         <div class="stat-label">Current Uptime</div>
-                        <div class="stat-value" style="font-size: 18px; color: #27ae60;">${formatDuration(stats.current_uptime)}</div>
+                        <div class="stat-value" style="font-size: 18px; color: #10b981;">${formatDuration(stats.current_uptime)}</div>
                     </div>
                     ` : ''}
                     ${stats.current_downtime > 0 ? `
                     <div class="stat-card">
                         <div class="stat-label">Current Downtime</div>
-                        <div class="stat-value" style="font-size: 18px; color: #e74c3c;">${formatDuration(stats.current_downtime)}</div>
+                        <div class="stat-value" style="font-size: 18px; color: #ef4444;">${formatDuration(stats.current_downtime)}</div>
                     </div>
                     ` : ''}
                 </div>
-                <div>
-                    <h4 style="margin-bottom: 10px; color: #2c3e50;">Response Time History (Last 24 Hours)</h4>
+                <div style="margin-top: 30px;">
+                    <h4 style="margin-bottom: 15px; color: #1f2937; font-size: 18px; font-weight: 600;">📈 Response Time History (Last 24 Hours)</h4>
                     <div class="chart-container">
                         <canvas id="chart-${serviceId}"></canvas>
                     </div>
@@ -1263,7 +1450,7 @@
         loadSystemInfo();
 
         // Auto-refresh
-        setInterval(loadServices, 15000); // This will also refresh expanded service details
+        setInterval(loadServices, 15000); // Refresh services list every 15 seconds
         setInterval(loadSystemInfo, 13000); // Update system info every 13 seconds
     </script>
 </body>

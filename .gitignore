@@ -47,3 +47,4 @@ monitoring_data.json
 # OS
 .DS_Store
 Thumbs.db
+dist.zip
